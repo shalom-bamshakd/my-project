@@ -1,16 +1,18 @@
-*{
+* {
     margin: 0;
     padding: 0;
-    font-family: 'poppins',sans-serif;
+    font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
-.container{
+
+.container {
     width: 100%;
     min-height: 100vh;
     background: linear-gradient(135deg, #153677, #4e085f);
     padding: 10px;
 }
-.todo-app{
+
+.todo-app {
     width: 100%;
     max-width: 540px;
     background: #fff;
@@ -18,34 +20,39 @@
     padding: 40px 30px 70px;
     border-radius: 10px;
 }
-.todo-app h2{
+
+.todo-app h2 {
     color: #002765;
     display: flex;
     align-items: center;
     margin-bottom: 20px;
 }
-.todo-app h2 img{
+
+.todo-app h2 img {
     width: 30px;
     margin-left: 10px;
 }
-.row{
+
+.row {
     display: flex;
     align-items: center;
     justify-content: space-between;
     background: #edeef0;
     border-radius: 30px;
     padding-left: 20px;
-    margin-bottom: 25p;
+    margin-bottom: 25px;
 }
-input{
+
+input {
     flex: 1;
     border: none;
     outline: none;
     background: transparent;
     padding: 10px;
-    font-weight: 14;
+    font-weight: 400;
 }
-button{
+
+button {
     border: none;
     outline: none;
     padding: 16px 15px;
@@ -55,29 +62,57 @@ button{
     cursor: pointer;
     border-radius: 40px;
 }
-ul li{
+
+ul {
     list-style: none;
+    padding: 0;
+}
+
+ul li {
     font-size: 17px;
-    padding: 12px 8px 12px 50px;
+    padding: 12px 8px; /* Adjusted padding */
     user-select: none;
     cursor: pointer;
     position: relative;
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center items vertically */
 }
-ul li::before{
-content: '';
-position: absolute;
-height: 28px;
-border-radius: 50%;
-background-image: url(images/unchecked.jpg);
-background-size: cover;
-background-position: center;
-top: 12px;
-left: 8px;
+
+ul li::before {
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    top: 50%; /* Center vertically */
+    left: 8px;
+    transform: translateY(-50%); /* Adjust for centering */
 }
-ul li.checked{
-  color:  #555; 
-  text-decoration: line-through; 
+
+ul li.checked {
+    color: #555;
+    text-decoration: line-through;
 }
-ul li.checked::before{
-    background-image: url(images/checked);
+
+ul li span.task-text {
+    flex: 1; /* Allow text to take available space */
+    margin-left: 10px; /* Reduced space for the checkbox */
+}
+
+ul li span {
+    position: relative; /* Change to relative for better positioning */
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    margin-left: 350px; /* Space between text and delete button */
+}
+
+ul li span:hover {
+    background: #edeef0;
 }
